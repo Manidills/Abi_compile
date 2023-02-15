@@ -3,7 +3,6 @@ from typing import Union
 from fastapi import FastAPI
 import json
 import web3
-from abi.abi import get_contract
 import requests
 #import nft_storage
 #from nft_storage.api import nft_storage_api
