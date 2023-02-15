@@ -1,4 +1,5 @@
 from typing import Union
+import os
 
 from fastapi import FastAPI
 import json
@@ -49,7 +50,7 @@ def read_root():
     
 @app.get("/code")
 def get_code(data:str):
-    openai.api_key = "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"
+    openai.api_key = os.getenv('api')
     # Get user input and use OpenAI to generate a response
     user_input = data
 
@@ -67,7 +68,7 @@ def get_code(data:str):
 
 @app.get("/compile")
 def get_compile_code(code:str):
-    openai.api_key = "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"
+    openai.api_key = os.getenv('api')
     # Get user input and use OpenAI to generate a response
     user_input = code
 
