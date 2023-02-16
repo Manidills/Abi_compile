@@ -4,3 +4,4 @@ py_solc_x==1.1.1
 requests==2.22.0
 web3==5.30.0
 uvicorn
+starlette

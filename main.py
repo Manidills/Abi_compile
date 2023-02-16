@@ -11,9 +11,24 @@ from io import BytesIO
 from fastapi import FastAPI, File, UploadFile
 import openai
 from solcx import compile_standard, install_solc
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
+
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+]
 
 
-app = FastAPI()
+app = FastAPI( middleware=middleware,)
+
+
+
 
 # def nft_storage_store(file_name):
 #         # Defining the host is optional and defaults to https://api.nft.storage
