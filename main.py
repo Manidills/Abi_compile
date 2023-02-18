@@ -89,7 +89,7 @@ def get_compile_code(code:str):
 
     if user_input:
         response = openai.Completion.create(
-            engine="text-davinci-002",
+            engine="text-davinci-003",
             prompt=f"{user_input}",
             max_tokens=1024,
             n=1,
@@ -130,7 +130,7 @@ def get_compile_code(code:str):
     #     "abi": abi, "bytecode": bytecode
     # })
     return({
-        "code": data.replace('\n',''),
+        "code": data,
         "compile_data": compiled_sol
     })
 
