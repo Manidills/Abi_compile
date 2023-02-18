@@ -89,7 +89,7 @@ def get_compile_code(code:str):
 
     if user_input:
         response = openai.Completion.create(
-            engine="text-davinci-003",
+            engine="text-davinci-002",
             prompt=f"{user_input}",
             max_tokens=1024,
             n=1,
